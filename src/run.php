@@ -5,7 +5,6 @@ namespace Erikas\DiscordServiceMonitor;
 include __DIR__ . '/../vendor/autoload.php';
 
 use Carbon\Carbon;
-use Discord\Builders\CommandBuilder;
 use Discord\Builders\MessageBuilder;
 use Discord\Discord;
 use Discord\Parts\Channel\Message;
@@ -146,9 +145,9 @@ $botInstance->on('ready', function (Discord $discord) use ($db) {
         $messageText = "";
 
         if ($guildCount > 1) {
-            $messageText .= "$guildCount servers!";
+            $messageText .= "$guildCount Discord servers!";
         } else {
-            $messageText .= "$guildCount server!";
+            $messageText .= "$guildCount Discord server!";
         }
 
         $statusPresence = new Activity($discord, [
